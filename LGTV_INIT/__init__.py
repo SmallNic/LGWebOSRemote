@@ -297,6 +297,7 @@ class LGTVClient(WebSocketClient):
         wol.send_magic_packet(self.__macAddress,ip_address='192.168.1.6', port=52000)
 
     def off(self):
+        print("TURN OFF")
         self.__send_command("", "request", "ssap://system/turnOff")
 
     def openBrowserAt(self, url, callback=None):
@@ -404,4 +405,5 @@ class LGTVClient(WebSocketClient):
         if type(payload) == str and len(payload) > 0:
             message_data['payload'] = payload
 
+        print("MESSAGE", message_data)
         self.send(json.dumps(message_data))

@@ -4,6 +4,13 @@ import json
 from inspect import getargspec
 from LGTV_INIT import LGTVScan, LGTVClient, getCommands
 
+# from flask import Flask, request
+# from flask_restful import Resource, Api
+# from sqlalchemy import create_engine
+# from json import dumps
+# from flask.ext.jsonpify import jsonify
+# from ws4py.client.threadedclient import WebSocketClient
+
 
 def usage(error=None):
     if error:
@@ -51,6 +58,7 @@ def parseargs(command, argv):
         output[a] = argv[i]
     return output
 
+
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         usage("Too few arguments")
@@ -88,3 +96,47 @@ if __name__ == '__main__':
             ws.run_forever()
         except KeyboardInterrupt:
             ws.close()
+
+
+# app = Flask(__name__)
+# api = Api(app)
+#
+# class On(Resource):
+#     def get(self):
+#         ws = LGTVClient()
+#         ws.on()
+#         return {'TV': 'on'}
+#
+# class Off(Resource):
+#     def get(self):
+#         initialize
+#         ws = LGTVClient()
+#         ws.off()
+#         return {'TV': 'off'}
+#
+# class Apps(Resource):
+#     def get(self):
+#         ws = LGTVClient()
+#         print("apps", ws.listApps)
+#         return {'Apps':'0'}
+#
+# class Mute(Resource):
+#     def get(self):
+#         ws = LGTVClient()
+#         ws.mute()
+#         return {'Mute':'On'}
+#
+#
+# api.add_resource(On, '/tv-on') # Route_1
+# api.add_resource(Off, '/tv-off') # Route_2
+# api.add_resource(Apps, '/apps')
+# api.add_resource(Mute, '/mute')
+
+# if __name__ == '__main__':
+#      app.run(port=5002)
+
+# if __name__ == '__main__':
+#      app.run(
+#          host=app.config.get("HOST", "localhost"),
+#          port=app.config.get("PORT", 4000)
+#      )
