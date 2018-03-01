@@ -294,7 +294,7 @@ class LGTVClient(WebSocketClient):
         print("on", self.__macAddress)
         if not self.__macAddress:
             print ("Client must have been powered on and paired before power on works")
-        wol.send_magic_packet(self.__macAddress,ip_address='192.168.1.6', port=52000)
+        wol.send_magic_packet(self.__macAddress)
 
     def off(self):
         print("TURN OFF")
