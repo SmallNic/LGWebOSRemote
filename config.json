@@ -1,0 +1,47 @@
+{
+    "FAUXMO": {
+        "ip_address": "auto"
+    },
+    "PLUGINS": {
+        "SimpleHTTPPlugin": {
+            "DEVICES": [
+                {
+                    "port": 52000,
+                    "on_cmd": "http://localhost:3000/tv/on",
+                    "off_cmd": "http://localhost:3000/tv/off",
+                    "method": "POST",
+                    "name": "Television",
+                    "state_cmd": "http://localhost:3000/tv/state",
+                    "state_method": "GET",
+                    "state_data": {"state": "data"},
+                    "state_response_on": "On",
+                    "state_response_off": "Off"
+                },
+                {
+                    "port": 52001,
+                    "on_cmd": "http://localhost:3000/tv/unmute",
+                    "off_cmd": "http://localhost:3000/tv/mute",
+                    "method": "POST",
+                    "name": "Volume",
+                    "state_cmd": "http://localhost:3000/tv/state",
+                    "state_method": "GET",
+                    "state_data": {"state": "data"},
+                    "state_response_on": "On",
+                    "state_response_off": "Off"
+                },
+                {
+                    "port": 52002,
+                    "on_cmd": "http://localhost:3000/apps/netflix/on",
+                    "off_cmd": "http://localhost:3000/apps/netflix/off",
+                    "method": "POST",
+                    "name": "Netflix",
+                    "state_cmd": "http://localhost:3000/tv/state",
+                    "state_method": "GET",
+                    "state_data": {"state": "data"},
+                    "state_response_on": "On",
+                    "state_response_off": "Off"
+                }
+            ]
+        }
+    }
+}

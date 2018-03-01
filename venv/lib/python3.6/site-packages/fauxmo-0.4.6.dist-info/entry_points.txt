@@ -1,0 +1,3 @@
+[console_scripts]
+fauxmo = fauxmo.cli:cli
+
